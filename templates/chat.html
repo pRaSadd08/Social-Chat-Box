@@ -1,0 +1,59 @@
+{% extends 'base.html' %}{% block content %}
+{% load static %}
+<section class="content">
+
+    <div class="logo"> 
+        <img src="{% static 'img/240_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpeg' %}">
+    
+
+    <div class="Home"><h1>Home</h1></div>
+
+    </div>
+
+<form action="/" method="post">
+
+    {% csrf_token %}
+
+    <div class="username">
+        <input type="text" name="name" placeholder="Name" required>
+    </div>
+
+    <br><br>
+
+    <div class="textarea">
+        <textarea type="text" name="body" placeholder="What's on your mind?" required></textarea>
+    </div>
+
+    <div class="submit">
+        <input type="submit" value="Send">
+    
+    </div>
+
+</form>
+
+{% for c in chats %}
+
+
+    <div class="logo"> 
+        <img src="{% static 'img/240_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpeg' %}">
+   
+
+    <div class="namedate">
+
+        <div class="name">{{c.name}}</div>
+        
+        <div class="date">{{c.DateTime}}</div>
+
+        <div class="body">
+            <p> {{c.body}}</p>
+        </div>
+
+        <br>
+        
+    </div>
+    </div>
+
+    {% endfor %}
+</section>
+
+    {% endblock %}

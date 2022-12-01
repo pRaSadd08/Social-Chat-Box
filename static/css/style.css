@@ -1,0 +1,57 @@
+.content {
+    max-width: 600px;
+    max-height: 600px;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.logo {
+    display: flex;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.Home {
+    padding: 20px 50px;
+
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+form {
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.namedate {
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom:5px;
+}
+
+.date {
+  font-size: 15px;
+  color: gray;
+}
+
+.body {
+    font-size: 18px;
+}
+
+
