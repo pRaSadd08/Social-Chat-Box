@@ -1,0 +1,35 @@
+{% block content%}{% load static%}
+
+<div class="logodiv">
+    <img src= "{% static 'img/social-media-twitter-logo-blue-isolated-free-vector.jpeg' %}" alt="" class="twitterlog">
+    <h1>Edit</h1>
+</div>
+
+<form action="edit/{{chats.id}}" method="POST" enctype="multipart/form-data">
+
+    {% csrf_token%}
+
+    <input type='text', value='{{chats.name}}', name="name">
+    <textarea type='text', value='body'>{{chats.body}}</textarea>
+
+    <input type='file', value="Update">
+    {% if chats.image.url %}
+    <img src="{{ chats.image.url }}" class="post-image" alt="" width="100%">
+    {% endif %}
+
+
+
+    <div class="butns">
+        <!-- <a href="/"  type="submit"><button>Cancel</button></a>
+          <input type="submit" name="" id="" value="cancel" />  -->
+         <!-- <a href="{% url 'chat' %}" type="submit"><button>Update</button></a> -->
+
+         <input class="upload-file" type="file" value="Choose File" name="image">
+         <button class="cancel"><a href="/" type="submit">Cancel</a></button>
+         <button class="update" type="submit">Update</button>
+
+    </div>
+
+</form>
+
+{% endblock %}

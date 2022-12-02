@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -107,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Bangalore'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -127,5 +131,12 @@ STATIC_URL = 'static/'
 # ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+cloudinary.config( 
+  cloud_name = "dsiz1ivro", 
+  api_key = "859554662682376", 
+  api_secret = "RDXLkTOM-edbFXIC2pHKdWpbl00",
+  secure = True
+)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

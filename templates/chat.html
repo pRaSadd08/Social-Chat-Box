@@ -10,7 +10,7 @@
 
     </div>
 
-<form action="/" method="post">
+<form action="/" method="POST">
 
     {% csrf_token %}
 
@@ -28,11 +28,18 @@
         <input type="submit" value="Send">
     
     </div>
-
+ 
 </form>
 
 {% for c in chats %}
 
+
+    <img class="menu_icon js-menu-icon" src="{% static 'img/menu.png' %}" />
+        <div class="menu">
+            <a href="/delete/{{ c.id }} ">Delete</a> <br>
+            <a href="/edit/{{ c.id }} ">Edit</a>
+        </div>
+ 
 
     <div class="logo"> 
         <img src="{% static 'img/240_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpeg' %}">
@@ -49,11 +56,31 @@
         </div>
 
         <br>
+        <!-- <a href="/delete/{{ c.id }} ">Delete</a> -->
+        {% if c.image.url %}
+        <img class="post-image" src="{{ c.image.url }}" width="100%" alt="">
+        {% endif %}
+
+        <form action="{% url 'like' c.pk %}" method="POST" id="likes-form">
+            {% csrf_token %}
+            <div class="row">
+                <button class="like-button" type="submit", name="post_id", value="{{c.id}}"> &#10084;</button> {{c.likes}}
+            </div>
+        </form>
         
     </div>
     </div>
 
     {% endfor %}
+</section>
+
+</section>
+<script
+src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"
+></script>
+<script src="{% static 'js/posts.js' %}"></script>
 </section>
 
     {% endblock %}
