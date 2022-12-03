@@ -1,35 +1,34 @@
-{% block content%}{% load static%}
-
-<div class="logodiv">
+{% extends 'base.html'%} {% block content%}{% load static%}
+<div class='content'>
+<div class="logo">
     <img src= "{% static 'img/social-media-twitter-logo-blue-isolated-free-vector.jpeg' %}" alt="" class="twitterlog">
-    <h1>Edit</h1>
+    <div class='Home'><h1>Edit</h1></div>
 </div>
 
-<form action="edit/{{chats.id}}" method="POST" enctype="multipart/form-data">
+<form action="/edit/{{chats.id}}/" method="POST" enctype="multipart/form-data">
 
     {% csrf_token%}
 
-    <input type='text', value='{{chats.name}}', name="name">
+    <input type='text', value='{{chats.name}}', name="name"><br><br>
     <textarea type='text', value='body'>{{chats.body}}</textarea>
+<br><br>
+<label for={{post.name}}></label>
 
     <input type='file', value="Update">
     {% if chats.image.url %}
     <img src="{{ chats.image.url }}" class="post-image" alt="" width="100%">
     {% endif %}
 
-
-
-    <div class="butns">
-        <!-- <a href="/"  type="submit"><button>Cancel</button></a>
-          <input type="submit" name="" id="" value="cancel" />  -->
-         <!-- <a href="{% url 'chat' %}" type="submit"><button>Update</button></a> -->
-
-         <input class="upload-file" type="file" value="Choose File" name="image">
-         <button class="cancel"><a href="/" type="submit">Cancel</a></button>
-         <button class="update" type="submit">Update</button>
-
+<br><br>
+    <div class="update-edit-buttons">
+        <a class="cancel-anchor" href="/">
+            <input class="cancel-button" type='button' id='delete' value="Cancel">
+        </a>
+        <br><br>
+        <input id="update-button" type='submit' value="Update">
     </div>
-
+    
 </form>
+</div>
 
 {% endblock %}
