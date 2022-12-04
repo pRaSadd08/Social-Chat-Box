@@ -58,7 +58,7 @@
         <br>
         <!-- <a href="/delete/{{ c.id }} ">Delete</a> -->
         {% if c.image.url %}
-        <img class="post-image" src="{{ c.image.url }}" style="width :370px; height:370px;">
+        <img id="image_id" class="post-image" src="{{ c.image.url }}" style="width :370px; height:370px;">
         {% endif %}
         <div id='like'>
         <form  id="like-form" action="{% url 'like' c.pk %}" method="POST" id="likes-form">

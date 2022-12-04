@@ -1,21 +1,21 @@
-{% extends 'base.html'%} {% block content%}{% load static%}
+{% extends 'base.html'%} {% block content%} {% load static%}
 <div class='content'>
 <div class="logo">
+    <a href="/">
     <img src= "{% static 'img/social-media-twitter-logo-blue-isolated-free-vector.jpeg' %}" alt="" class="twitterlog">
+</a>
     <div class='Home'><h1>Edit</h1></div>
 </div>
 
 <form action="/edit/{{chats.id}}/" method="POST" enctype="multipart/form-data">
 
     {% csrf_token%}
-
-    <input type='text', value='{{chats.name}}', name="name"><br><br>
-    <textarea type='text', value='body'>{{chats.body}}</textarea>
-<br><br>
+    <input type='text', value='{{chats.name}}', name="name" required><br><br>
+    <textarea name="body" type='text', value='body'required>{{chats.body}}</textarea><br>
 <label for={{post.name}}></label>
 
     <input type='file', value="Update">
-    {% if chats.image.url %}
+    {% if chats.image %}
     <img src="{{ chats.image.url }}" class="post-image" alt="" width="100%">
     {% endif %}
 

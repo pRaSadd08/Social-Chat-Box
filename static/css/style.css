@@ -13,16 +13,17 @@
 }
 
 .Home {
-    padding: 20px 50px;
+    padding: 20px 20px;
 
 }
 
 img {
     height: 50px;
     width: 50px;
-    padding-left: 50px;
+    padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
+
 }
 
 form {
@@ -43,7 +44,7 @@ form {
 }
 
 .namedate {
-    padding-left: 50px;
+    padding-left: 20px;
     padding-top: 20px;
 }
 
@@ -103,5 +104,4 @@ form {
     text-decoration: none;
     color: white;
 }
-
 
